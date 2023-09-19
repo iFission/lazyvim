@@ -1,5 +1,6 @@
-return {
+return { {
   "folke/flash.nvim",
+  enabled = false,
   event = "VeryLazy",
   opts = {
     modes = {
@@ -10,6 +11,8 @@ return {
   },
   ---@type Flash.Config
   keys = {
+    { "s", false },
+    { "S", false },
     {
       "s",
       mode = { "n", "x", "o" },
@@ -54,4 +57,4 @@ return {
       desc = "Toggle Flash Search",
     },
   },
-}
+} false }

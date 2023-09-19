@@ -17,6 +17,14 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+-- unset
+map("n", "<leader>ft", "")
+map("n", "<leader>fT", "")
+map("n", "<leader>xl", "")
+map("n", "<leader>xq", "")
+map("n", "<leader>x", "")
+
+-- nvim
 map({ "n", "i", "v" }, "<c-q>", "<cmd>quitall!<cr>", { desc = "Quit", remap = true })
 map({ "n", "v" }, "<leader><q>", "<cmd>quit!<cr>", { desc = "Quit", remap = true })
 map("n", "<leader>bn", "<cmd>tabnew<cr>", { desc = "New tab" })
@@ -143,6 +151,8 @@ map({ "n", "v", "t" }, "<C-t>", lazyterm, { desc = "Toggle terminal" })
 
 -- buffer
 -- map("n", "<leader>b", { name = "Buffers" })
+map("n", "x", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
+map("n", "Q", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
 map("n", "<leader>x", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
 map("n", "<leader>X", "<Cmd>BufferRestore<CR>", { desc = "Restore buffer" })
 map("n", "<leader>bx", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })

@@ -238,5 +238,7 @@ map("i", "<C-v>", "<C-O>:set noai<CR><C-r>*<C-O>:set ai<CR>")
 map("v", "<C-v>", "P")
 
 -- editing
+map("n", "<bs>", "X")
+map("n", "<del>", "x")
 map("n", "<cr>", "ciw")
 map("v", "<leader>j", "J", { desc = "Join lines" })

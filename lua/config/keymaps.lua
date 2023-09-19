@@ -151,7 +151,6 @@ map({ "n", "v", "t" }, "<C-t>", lazyterm, { desc = "Toggle terminal" })
 
 -- buffer
 -- map("n", "<leader>b", { name = "Buffers" })
-map("n", "x", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
 map("n", "Q", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
 map("n", "<leader>x", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
 map("n", "<leader>X", "<Cmd>BufferRestore<CR>", { desc = "Restore buffer" })

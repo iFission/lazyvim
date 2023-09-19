@@ -103,15 +103,37 @@ map("n", "<leader>fn", function() require("telescope").extensions.notify.notify(
 -- editing/intellisense/code
 map("n", "gi", function() vim.lsp.buf.hover() end, { desc = "Hover symbol details" })
 map("n", "gl", function() vim.diagnostic.open_float() end, { desc = "Hover problems" })
-map("n", "gc", function() vim.lsp.buf.code_action() end, { desc = "LSP code action" })
-map("n", "<leader>rn", function() vim.lsp.buf.rename() end, { desc = "Rename current symbol" })
-map("n", "g2", function() vim.diagnostic.goto_next() end, { desc = "Next problem" })
+map("n", "gc", function() vim.lsp.buf.code_action() end, { desc = "Code action" })
+map("n", "gc", function()
+    vim.lsp.buf.code_action({
+      context = {
+        only = {
+          "source",
+        },
+        diagnostics = {},
+      },
+    })
+  end,
+  { desc = "Source action" })
 map("n", "g1", function() vim.diagnostic.goto_prev() end, { desc = "Prev problem" })
+map("n", "g2", function() vim.diagnostic.goto_next() end, { desc = "Next problem" })
+map("n", "<leader>o", "<cmd>SymbolsOutline<cr>", { desc = "Open symbols outline" })
 map("n", "<leader>2", function() require("telescope.builtin").lsp_definitions() end, { desc = "Definition" })
 map("n", "<leader>'", function() vim.lsp.buf.hover() end, { desc = "Hover symbol details" })
 map("n", "<leader>,", function() vim.diagnostic.open_float() end, { desc = "Hover diagnostics" })
-map("n", "<leader>.", function() vim.lsp.buf.code_action() end, { desc = "LSP code action" })
-map("n", "<leader>o", "<cmd>SymbolsOutline<cr>", { desc = "Open symbols outline" })
+map("n", "<leader>.", function() vim.lsp.buf.code_action() end, { desc = "Code action" })
+map("n", "<leader>>", function()
+    vim.lsp.buf.code_action({
+      context = {
+        only = {
+          "source",
+        },
+        diagnostics = {},
+      },
+    })
+  end,
+  { desc = "Source action" })
+map("n", "<leader>rn", function() vim.lsp.buf.rename() end, { desc = "Rename current symbol" })
 
 -- terminal
 local lazyterm = function()

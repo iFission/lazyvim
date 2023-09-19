@@ -98,11 +98,13 @@ map("n", ")", function() require("telescope.builtin").buffers() end, { desc = "F
 map("n", "<leader>fm", function() require("mini.files").open(vim.api.nvim_buf_get_name(0), true) end,
   { desc = "Open mini.files (directory of current file)" })
 map("n", "<leader>fk", function() require("telescope.builtin").keymaps() end, { desc = "Find keymaps" })
+map("n", "<leader>fn", function() require("telescope").extensions.notify.notify() end, { desc = "Find notifications" })
 
--- editing/intellisense
+-- editing/intellisense/code
 map("n", "gi", function() vim.lsp.buf.hover() end, { desc = "Hover symbol details" })
 map("n", "gl", function() vim.diagnostic.open_float() end, { desc = "Hover problems" })
 map("n", "gc", function() vim.lsp.buf.code_action() end, { desc = "LSP code action" })
+map("n", "<leader>rn", function() vim.lsp.buf.rename() end, { desc = "Rename current symbol" })
 map("n", "g2", function() vim.diagnostic.goto_next() end, { desc = "Next problem" })
 map("n", "g1", function() vim.diagnostic.goto_prev() end, { desc = "Prev problem" })
 map("n", "<leader>2", function() require("telescope.builtin").lsp_definitions() end, { desc = "Definition" })

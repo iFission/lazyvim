@@ -17,11 +17,9 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map({ "n", "i", "v" }, "<c-q>", "<cmd>quit!<cr>", { desc = "Quit", remap = true })
+map({ "n", "i", "v" }, "<c-q>", "<cmd>quitall!<cr>", { desc = "Quit", remap = true })
 map({ "n", "v" }, "<leader><q>", "<cmd>quit!<cr>", { desc = "Quit", remap = true })
 map("n", "<leader>bn", "<cmd>tabnew<cr>", { desc = "New tab" })
-
-map("n", "<leader><c-q>", "<cmd>quitall!<cr>", { desc = "Quit all" })
 
 -- package
 map("n", "<leader>ps", "<cmd>Lazy<cr>", { desc = "Lazy" })

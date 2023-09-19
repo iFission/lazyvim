@@ -23,9 +23,11 @@ map("n", "<leader>fT", "")
 map("n", "<leader>xl", "")
 map("n", "<leader>xq", "")
 map("n", "<leader>x", "")
+map("n", "<leader>qq", "")
 
 -- nvim
 map({ "n", "i", "v" }, "<c-q>", "<cmd>quitall!<cr>", { desc = "Quit", remap = true })
+map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 map({ "n", "v" }, "<leader><q>", "<cmd>quit!<cr>", { desc = "Quit", remap = true })
 map("n", "<leader>bn", "<cmd>tabnew<cr>", { desc = "New tab" })
 

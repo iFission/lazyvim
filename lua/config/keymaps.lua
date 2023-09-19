@@ -23,6 +23,10 @@ map("n", "<leader>bn", "<cmd>tabnew<cr>", { desc = "New tab" })
 
 map("n", "<leader><c-q>", "<cmd>quitall!<cr>", { desc = "Quit all" })
 
+-- package
+map("n", "<leader>ps", "<cmd>Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>pm", "<cmd>Mason<cr>", { desc = "Mason" })
+
 -- git
 map("n", "<leader>g4", "<cmd>Gitsign prev_hunk<cr>", { desc = "Prev hunk" })
 map("n", "<leader>g3", "<cmd>Gitsign next_hunk<cr>", { desc = "Next hunk" })

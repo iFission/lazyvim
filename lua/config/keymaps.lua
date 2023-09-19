@@ -24,6 +24,8 @@ map("n", "<leader>bn", "<cmd>tabnew<cr>", { desc = "New tab" })
 -- package
 map("n", "<leader>ps", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>pm", "<cmd>Mason<cr>", { desc = "Mason" })
+map("n", "<leader>pn", "<cmd>LspInfo<cr>", { desc = "LSP" })
+map("n", "<leader>pl", "<cmd>NullLsInfo<cr>", { desc = "Null-ls" })
 
 -- git
 map("n", "<leader>g4", "<cmd>Gitsign prev_hunk<cr>", { desc = "Prev hunk" })

@@ -175,7 +175,7 @@ map("n", "<leader>b<", "<Cmd>BufferMovePrevious<CR>", { desc = "Buffer move prev
 map("n", "<leader>b>", "<Cmd>BufferMoveNext<CR>", { desc = "Buffer move next" })
 map("n", "<leader>bh", "<Cmd>BufferCloseBuffersLeft<CR>", { desc = "Close left tabs" })
 map("n", "<leader>bl", "<Cmd>BufferCloseBuffersRight<CR>", { desc = "Close right tabs" })
-map("n", "<leader>c", "<cmd>enew<cr>", { desc = "New File" })
+map("n", "<leader>bc", "<cmd>enew<cr>", { desc = "Create file" })
 
 -- diff
 map("n", "<leader>d", function()

@@ -4,7 +4,6 @@
   "LuaSnip": { "branch": "master", "commit": "8efa4e402a24df6a4713a2ec653147c49e8f73de" },
   "actions-preview.nvim": { "branch": "master", "commit": "5650c76abfb84d6498330dd045657ba630ecdbba" },
   "advanced-git-search.nvim": { "branch": "main", "commit": "79c9aab7aa1cf08c2a25d931719bcb408b381ed2" },
-  "alpha-nvim": { "branch": "main", "commit": "234822140b265ec4ba3203e3e0be0e0bb826dff5" },
   "arshlib.nvim": { "branch": "master", "commit": "e76e35c927098d07445c72e9416cce243f6aae59" },
   "auto-dark-mode.nvim": { "branch": "master", "commit": "7cbf30c95c793e06c7df2dbfe6713cf3205c4b59" },
   "auto-session": { "branch": "main", "commit": "3eb26b949e1b90798e84926848551046e2eb0721" },

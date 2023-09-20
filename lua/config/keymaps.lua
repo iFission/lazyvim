@@ -145,6 +145,16 @@ map("n", "<leader>>", function()
   { desc = "Source action" })
 map("n", "<leader>rn", function() vim.lsp.buf.rename() end, { desc = "Rename current symbol" })
 
+-- Comment
+map("n", "<leader>/",
+  function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
+  { desc = "Toggle comment line" }
+)
+map("v", "<leader>/",
+  "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+  { desc = "Toggle comment for selection", }
+)
+
 -- terminal
 local lazyterm = function()
   Util.float_term(nil, { cwd = Util.get_root() })

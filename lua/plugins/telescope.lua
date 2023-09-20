@@ -1,5 +1,8 @@
 return {
   "nvim-telescope/telescope.nvim",
+  keys = {
+    { "<leader>/", false }
+  },
   opts = function()
     local actions = require "telescope.actions"
     return {

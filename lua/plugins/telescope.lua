@@ -1,10 +1,11 @@
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
-    { "<leader>/", false }
+    { "<leader>/",  false },
+    { "<leader>gc", false },
   },
   opts = function()
-    local actions = require "telescope.actions"
+    local actions = require("telescope.actions")
     return {
       defaults = {
         dynamic_preview_title = true,

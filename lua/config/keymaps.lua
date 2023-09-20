@@ -109,6 +109,10 @@ map("n", "<leader>fm", function() require("mini.files").open(vim.api.nvim_buf_ge
   { desc = "Open mini.files (directory of current file)" })
 map("n", "<leader>fk", function() require("telescope.builtin").keymaps() end, { desc = "Find keymaps" })
 map("n", "<leader>fn", function() require("telescope").extensions.notify.notify() end, { desc = "Find notifications" })
+map("n", "<leader>gc", "<cmd>AdvancedGitSearch search_log_content<CR>", { desc = "Commits (repo)" })
+map("n", "<leader>gC", "<cmd>AdvancedGitSearch search_log_content_file<CR>", { desc = "Commits (file)" })
+map("n", "<leader>gl", function() require("gitsigns").blame_line() end, { desc = "Blame" })
+map("n", "<leader>gL", function() require("gitsigns").blame_line({ full = true }) end, { desc = "Blame (full)" })
 
 -- editing/intellisense/code
 map("n", "gi", function() vim.lsp.buf.hover() end, { desc = "Hover symbol details" })

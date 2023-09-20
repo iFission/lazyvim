@@ -60,7 +60,6 @@ return {
           },
           lualine_y = {
             { "location" },
-            { "progress" },
             { "filesize" }
           },
           lualine_z = {

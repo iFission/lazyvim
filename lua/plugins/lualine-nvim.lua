@@ -35,27 +35,36 @@ return {
                 hint = icons.diagnostics.Hint,
               },
             },
-            { "filetype", icon_only = false, separator = "", padding = { left = 1, right = 0 } },
-            { function()
-              return "TS: " .. require "vim.treesitter.highlighter".active[vim.api.nvim_get_current_buf()].tree._lang
-            end },
-            { function()
-              output = "LSP: "
-              for _, client in ipairs(vim.lsp.get_active_clients()) do
-                output = output .. client.name .. " "
-              end
-              return output
-            end },
-            { function()
-              output = "Null-ls: "
-              local ft = vim.api.nvim_buf_get_option(vim.api.nvim_get_current_buf(), "filetype")
-              for _, source in ipairs(require("null-ls.sources").get_all()) do
-                if require("null-ls.sources").is_available(source, ft) then
-                  output = output .. source.name .. " "
+            { "filetype", icon_only = false, separator = "", padding = { left = 2, right = 0 } },
+            {
+              function()
+                return " " .. require "vim.treesitter.highlighter".active[vim.api.nvim_get_current_buf()].tree._lang
+              end,
+              padding = { left = 2, right = 0 }
+            },
+            {
+              function()
+                local output = ""
+                for _, client in ipairs(vim.lsp.get_active_clients()) do
+                  output = output .. " " .. client.name
                 end
-              end
-              return output
-            end }
+                return output
+              end,
+              padding = { left = 2, right = 0 }
+            },
+            {
+              function()
+                local output = "󰟢"
+                local ft = vim.api.nvim_buf_get_option(vim.api.nvim_get_current_buf(), "filetype")
+                for _, source in ipairs(require("null-ls.sources").get_all()) do
+                  if require("null-ls.sources").is_available(source, ft) then
+                    output = output .. " " .. source.name
+                  end
+                end
+                return output
+              end,
+              padding = { left = 2, right = 0 }
+            }
 
 
           },

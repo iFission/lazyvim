@@ -11,19 +11,21 @@ return {
           theme = "auto",
           globalstatus = true,
           disabled_filetypes = { statusline = { "dashboard", "alpha" } },
-          component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' },
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { { "branch" }, {
-            "diff",
-            symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
+          lualine_b = {
+            { "branch" },
+            {
+              "diff",
+              symbols = {
+                added = icons.git.added,
+                modified = icons.git.modified,
+                removed = icons.git.removed,
+              },
             },
-          },
           },
           lualine_c = {
             {
@@ -38,35 +40,43 @@ return {
             { "filetype", icon_only = false, separator = "", padding = { left = 2, right = 0 } },
             {
               function()
-                return " " .. require "vim.treesitter.highlighter".active[vim.api.nvim_get_current_buf()].tree._lang
+                return " " .. require("vim.treesitter.highlighter").active[vim.api.nvim_get_current_buf()].tree._lang
               end,
-              padding = { left = 2, right = 0 }
+              padding = { left = 2, right = 0 },
             },
             {
               function()
-                local output = ""
+                local clients = {}
                 for _, client in ipairs(vim.lsp.get_active_clients()) do
-                  output = output .. " " .. client.name
-                end
-                return output
-              end,
-              padding = { left = 2, right = 0 }
-            },
-            {
-              function()
-                local output = "󰟢"
-                local ft = vim.api.nvim_buf_get_option(vim.api.nvim_get_current_buf(), "filetype")
-                for _, source in ipairs(require("null-ls.sources").get_all()) do
-                  if require("null-ls.sources").is_available(source, ft) then
-                    output = output .. " " .. source.name
+                  if client.name ~= "null-ls" then
+                    table.insert(clients, client.name)
                   end
                 end
-                return output
+                if next(clients) then
+                  return " " .. table.concat(clients, " ")
+                else
+                  return ""
+                end
               end,
-              padding = { left = 2, right = 0 }
-            }
-
-
+              padding = { left = 2, right = 0 },
+            },
+            {
+              function()
+                local clients = {}
+                local ft = vim.api.nvim_buf_get_option(vim.api.nvim_get_current_buf(), "filetype")
+                for _, client in ipairs(require("null-ls.sources").get_all()) do
+                  if require("null-ls.sources").is_available(client, ft) then
+                    table.insert(clients, client.name)
+                  end
+                end
+                if next(clients) then
+                  return "󰟢 " .. table.concat(clients, " ")
+                else
+                  return ""
+                end
+              end,
+              padding = { left = 2, right = 0 },
+            },
           },
           lualine_x = {
             -- stylua: ignore
@@ -91,7 +101,7 @@ return {
           },
           lualine_y = {
             { "location" },
-            { "filesize" }
+            { "filesize" },
           },
           lualine_z = {
             function()

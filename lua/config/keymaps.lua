@@ -30,6 +30,7 @@ map({ "n", "i", "v" }, "<c-q>", "<cmd>quitall!<cr>", { desc = "Quit", remap = tr
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 map({ "n", "v" }, "<leader><q>", "<cmd>quit!<cr>", { desc = "Quit", remap = true })
 map("n", "<leader>bn", "<cmd>tabnew<cr>", { desc = "New tab" })
+map("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Session delete" })
 
 -- package
 map("n", "<leader>ps", "<cmd>Lazy install<cr>", { desc = "Lazy" })

@@ -12,6 +12,14 @@ return {
         end,
         desc = "Replace in files (Spectre)",
       },
+      {
+        "<leader>fR",
+        function()
+          require("spectre").open_visual()
+        end,
+        desc = "Replace in files (current word)",
+        mode = "v",
+      },
     },
   },
 }

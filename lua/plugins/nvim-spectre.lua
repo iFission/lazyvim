@@ -15,7 +15,7 @@ return {
       {
         "<leader>fR",
         function()
-          require("spectre").open_visual()
+          require("spectre").open_visual({ select_word = true })
         end,
         desc = "Replace in files (current word)",
         mode = "v",

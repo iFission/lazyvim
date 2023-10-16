@@ -24,6 +24,7 @@ map("n", "<leader>xl", "")
 map("n", "<leader>xq", "")
 map("n", "<leader>x", "")
 map("n", "<leader>qq", "")
+map("n", "gI", "")
 
 -- nvim
 map({ "n", "i", "v" }, "<c-q>", "<cmd>quitall!<cr>", { desc = "Quit", remap = true })
@@ -186,6 +187,9 @@ map("n", "<leader>>", function()
     },
   })
 end, { desc = "Source action" })
+map("n", "gi", function()
+  require("telescope.builtin").lsp_implementations({ reuse_win = true })
+end, { desc = "Goto Implementation" })
 map("n", "<leader>rn", function()
   vim.lsp.buf.rename()
 end, { desc = "Rename current symbol" })

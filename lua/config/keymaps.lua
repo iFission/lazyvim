@@ -145,10 +145,8 @@ end, { desc = "Hover symbol details" })
 map("n", "gl", function()
   vim.diagnostic.open_float()
 end, { desc = "Hover problems" })
-map("n", "gc", function()
-  vim.lsp.buf.code_action()
-end, { desc = "Code action" })
-map("n", "gc", function()
+map("n", "gc", require("actions-preview").code_actions, { desc = "Code action" })
+map("n", "gC", function()
   vim.lsp.buf.code_action({
     context = {
       only = {
@@ -174,9 +172,7 @@ end, { desc = "Hover symbol details" })
 map("n", "<leader>,", function()
   vim.diagnostic.open_float()
 end, { desc = "Hover diagnostics" })
-map("n", "<leader>.", function()
-  vim.lsp.buf.code_action()
-end, { desc = "Code action" })
+map("n", "<leader>.", require("actions-preview").code_actions, { desc = "Code action" })
 map("n", "<leader>>", function()
   vim.lsp.buf.code_action({
     context = {

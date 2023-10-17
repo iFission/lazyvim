@@ -70,7 +70,6 @@ map("n", "<leader>W", "<cmd>w !sudo tee %<cr>", { desc = "Force write" })
 map("n", "<leader><C-s>", "<cmd>noa w<cr>", { desc = "Save without formatting" })
 
 -- find
-map({ "n", "v" }, "<leader>fr", "<cmd> Telescope resume<cr>", { desc = "Resume previous search" })
 map({ "n", "v" }, "<leader>1", "<cmd> Telescope resume<cr>", { desc = "Resume previous search" })
 map({ "n", "v" }, "<leader>3", function()
   require("telescope.builtin").commands()

@@ -14,13 +14,10 @@ return {
   },
   keys = {
     {
-      "<leader>fm",
-      function() require("mini.files").open(vim.api.nvim_buf_get_name(0), true) end,
-      desc = "Open mini.files (directory of current file)",
-    },
-    {
       "<leader>fM",
-      function() require("mini.files").open(vim.loop.cwd(), true) end,
+      function()
+        require("mini.files").open(vim.loop.cwd(), true)
+      end,
       desc = "Open mini.files (cwd)",
     },
   },
@@ -28,13 +25,17 @@ return {
     require("mini.files").setup(opts)
 
     local show_dotfiles = true
-    local filter_show = function(fs_entry) return true end
-    local filter_hide = function(fs_entry) return not vim.startswith(fs_entry.name, ".") end
+    local filter_show = function(fs_entry)
+      return true
+    end
+    local filter_hide = function(fs_entry)
+      return not vim.startswith(fs_entry.name, ".")
+    end
 
     local toggle_dotfiles = function()
       show_dotfiles = not show_dotfiles
       local new_filter = show_dotfiles and filter_show or filter_hide
-      require("mini.files").refresh { content = { filter = new_filter } }
+      require("mini.files").refresh({ content = { filter = new_filter } })
     end
 
     vim.api.nvim_create_autocmd("User", {

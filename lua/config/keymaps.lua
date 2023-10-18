@@ -18,13 +18,11 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- unset
-map("n", "<leader>ft", "")
-map("n", "<leader>fT", "")
-map("n", "<leader>xl", "")
-map("n", "<leader>xq", "")
-map("n", "<leader>x", "")
-map("n", "<leader>qq", "")
-map("n", "gI", "")
+vim.keymap.del("n", "<leader>ft")
+vim.keymap.del("n", "<leader>fT")
+vim.keymap.del("n", "<leader>xl")
+vim.keymap.del("n", "<leader>xq")
+vim.keymap.del("n", "<leader>qq")
 
 -- nvim
 map({ "n", "i", "v" }, "<c-q>", "<cmd>quitall!<cr>", { desc = "Quit", remap = true })

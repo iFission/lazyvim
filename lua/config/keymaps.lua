@@ -316,6 +316,7 @@ map("v", "<S-Right>", ":MoveHBlock(1)<cr>", { desc = "Move block right" })
 map("n", "<C-v>", "gP")
 map("i", "<C-v>", "<C-O>:set noai<CR><C-r>*<C-O>:set ai<CR>")
 map("v", "<C-v>", "P")
+map("c", "<C-v>", "<C-r>")
 
 -- editing
 map("n", "<bs>", "X")

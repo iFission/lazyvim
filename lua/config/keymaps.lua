@@ -256,28 +256,48 @@ map("v", "<leader>d", function()
 end, { desc = "Compare to clipboard" })
 
 -- window
-map("n", "<c-w><up>", "<Cmd>wincmd k<CR>", { desc = "Focus up window" })
-map("n", "<c-w><down>", "<Cmd>wincmd j<CR>", { desc = "Focus down window" })
-map("n", "<c-w><left>", "<Cmd>wincmd h<CR>", { desc = "Focus left window" })
-map("n", "<c-w><right>", "<Cmd>wincmd l<CR>", { desc = "Focus right window" })
-map("n", "<c-w>'", "<Cmd>wincmd v<CR>", { desc = "Split vertical" })
-map("n", '<c-w>"', "<Cmd>wincmd s<CR>", { desc = "Split horizontal" })
-map("n", "<c-w>Q", "<Cmd>wincmd =<CR>", { desc = "Reset balance" })
-map("n", "<c-w>F", "<Cmd>wincmd =<CR>", { desc = "Reset balance" })
-map("n", "<c-w>f", "<Cmd>wincmd |<CR><Cmd>wincmd _<CR>", { desc = "Maximise" })
-map("n", "<c-w>x", "<Cmd>wincmd q<CR>", { desc = "Close window" })
-map("n", "<c-w>c", "<Cmd>wincmd q<CR>", { desc = "Close window" })
-map("n", "<c-w>C", "<Cmd>wincmd o<CR>", { desc = "Close other windows" })
-map("n", "<c-w>>", "<Cmd>wincmd r<CR>", { desc = "Rotate" })
-map("n", "<c-w><", "<Cmd>wincmd R<CR>", { desc = "Rotate" })
-map("n", "<c-w>k", "<Cmd>wincmd K<CR>", { desc = "Horizontal" })
-map("n", "<c-w><c-v>", "<Cmd>wincmd H<CR>", { desc = "Vertical" })
-map("n", "<c-w>h", "<Cmd>BufferPrevious<CR>", { desc = "Prev buffer" })
-map("n", "<c-w>l", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
-map("n", "<c-w>L", "<Cmd>wincmd ><CR><Cmd>wincmd ><CR><Cmd>wincmd ><CR><Cmd>wincmd ><CR>", { desc = "Increase width" })
-map("n", "<c-w>H", "<Cmd>wincmd <<CR><Cmd>wincmd <<CR><Cmd>wincmd <<CR><Cmd>wincmd <<CR>", { desc = "Decrease width" })
-map("n", "<c-w>J", "<Cmd>wincmd +<CR><Cmd>wincmd +<CR><Cmd>wincmd +<CR><Cmd>wincmd +<CR>", { desc = "Increase height" })
-map("n", "<c-w>K", "<Cmd>wincmd -<CR><Cmd>wincmd -<CR><Cmd>wincmd -<CR><Cmd>wincmd -<CR>", { desc = "Increase height" })
+map({ "n", "x", "i" }, "<c-w><up>", "<Cmd>wincmd k<CR>", { desc = "Focus up window" })
+map({ "n", "x", "i" }, "<c-w><down>", "<Cmd>wincmd j<CR>", { desc = "Focus down window" })
+map({ "n", "x", "i" }, "<c-w><left>", "<Cmd>wincmd h<CR>", { desc = "Focus left window" })
+map({ "n", "x", "i" }, "<c-w><right>", "<Cmd>wincmd l<CR>", { desc = "Focus right window" })
+map({ "n", "x", "i" }, "<c-w>'", "<Cmd>wincmd v<CR>", { desc = "Split vertical" })
+map({ "n", "x", "i" }, '<c-w>"', "<Cmd>wincmd s<CR>", { desc = "Split horizontal" })
+map({ "n", "x", "i" }, "<c-w>Q", "<Cmd>wincmd =<CR>", { desc = "Reset balance" })
+map({ "n", "x", "i" }, "<c-w>F", "<Cmd>wincmd =<CR>", { desc = "Reset balance" })
+map({ "n", "x", "i" }, "<c-w>f", "<Cmd>wincmd |<CR><Cmd>wincmd _<CR>", { desc = "Maximise" })
+map({ "n", "x", "i" }, "<c-w>x", "<Cmd>wincmd q<CR>", { desc = "Close window" })
+map({ "n", "x", "i" }, "<c-w>c", "<Cmd>wincmd q<CR>", { desc = "Close window" })
+map({ "n", "x", "i" }, "<c-w>C", "<Cmd>wincmd o<CR>", { desc = "Close other windows" })
+map({ "n", "x", "i" }, "<c-w>>", "<Cmd>wincmd r<CR>", { desc = "Rotate" })
+map({ "n", "x", "i" }, "<c-w><", "<Cmd>wincmd R<CR>", { desc = "Rotate" })
+map({ "n", "x", "i" }, "<c-w>k", "<Cmd>wincmd K<CR>", { desc = "Horizontal" })
+map({ "n", "x", "i" }, "<c-w><c-v>", "<Cmd>wincmd H<CR>", { desc = "Vertical" })
+map({ "n", "x", "i" }, "<c-w>h", "<Cmd>BufferPrevious<CR>", { desc = "Prev buffer" })
+map({ "n", "x", "i" }, "<c-w>l", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
+map(
+  { "n", "x", "i" },
+  "<c-w>L",
+  "<Cmd>wincmd ><CR><Cmd>wincmd ><CR><Cmd>wincmd ><CR><Cmd>wincmd ><CR>",
+  { desc = "Increase width" }
+)
+map(
+  { "n", "x", "i" },
+  "<c-w>H",
+  "<Cmd>wincmd <<CR><Cmd>wincmd <<CR><Cmd>wincmd <<CR><Cmd>wincmd <<CR>",
+  { desc = "Decrease width" }
+)
+map(
+  { "n", "x", "i" },
+  "<c-w>J",
+  "<Cmd>wincmd +<CR><Cmd>wincmd +<CR><Cmd>wincmd +<CR><Cmd>wincmd +<CR>",
+  { desc = "Increase height" }
+)
+map(
+  { "n", "x", "i" },
+  "<c-w>K",
+  "<Cmd>wincmd -<CR><Cmd>wincmd -<CR><Cmd>wincmd -<CR><Cmd>wincmd -<CR>",
+  { desc = "Increase height" }
+)
 
 -- move
 map("n", "<S-Up>", ":MoveLine(-1)<cr>", { desc = "Move line up" })

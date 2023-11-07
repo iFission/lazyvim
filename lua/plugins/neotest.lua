@@ -20,6 +20,7 @@ return {
         open = function()
           if require("lazyvim.util").has("trouble.nvim") then
             vim.cmd("Trouble quickfix")
+            vim.cmd("wincmd k")
           else
             vim.cmd("copen")
           end

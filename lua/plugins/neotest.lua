@@ -114,6 +114,11 @@ return {
       vim.g["test#neovim#preserve_screen"] = 1
       vim.g["test#neovim#start_normal"] = 1
     end,
+    keys = {
+      { "<leader>Tr", "<cmd>w|TestFile<cr>", desc = "File" },
+      { "<leader>Tn", "<cmd>w|TestNearest<cr>", desc = "Nearest" },
+      { "<leader>TR", "<cmd>w|TestSuite<cr>", desc = "Suite" },
+    },
   },
   {
     "nvim-neotest/neotest",

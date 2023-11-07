@@ -105,4 +105,25 @@ return {
       })
     end,
   },
+  {
+    "vim-test/vim-test",
+    config = function()
+      vim.g["test#strategy"] = "neovim"
+      vim.g["test#neovim#term_position"] = "belowright"
+      vim.g["test#neovim#preserve_screen"] = 1
+      vim.g["test#neovim#start_normal"] = 1
+    end,
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/neotest-vim-test",
+      "vim-test/vim-test",
+    },
+    opts = function(_, opts)
+      vim.list_extend(opts.adapters, {
+        require("neotest-vim-test")({}),
+      })
+    end,
+  },
 }

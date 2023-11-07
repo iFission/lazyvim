@@ -271,6 +271,7 @@ map({ "n", "x", "i" }, "<c-w>Q", "<Cmd>wincmd =<CR>", { desc = "Reset balance" }
 map({ "n", "x", "i" }, "<c-w>F", "<Cmd>wincmd =<CR>", { desc = "Reset balance" })
 map({ "n", "x", "i" }, "<c-w>f", "<Cmd>wincmd |<CR><Cmd>wincmd _<CR>", { desc = "Maximise" })
 map({ "n", "x", "i" }, "<c-w>x", "<Cmd>wincmd q<CR>", { desc = "Close window" })
+map({ "n", "x", "i" }, "<c-w>X", "<Cmd>wincmd o<CR>", { desc = "Close other windows" })
 map({ "n", "x", "i" }, "<c-w>c", "<Cmd>wincmd q<CR>", { desc = "Close window" })
 map({ "n", "x", "i" }, "<c-w>C", "<Cmd>wincmd o<CR>", { desc = "Close other windows" })
 map({ "n", "x", "i" }, "<c-w>>", "<Cmd>wincmd r<CR>", { desc = "Rotate" })

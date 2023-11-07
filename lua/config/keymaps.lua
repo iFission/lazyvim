@@ -187,6 +187,7 @@ end, { desc = "Goto Implementation" })
 map("n", "<leader>rn", function()
   vim.lsp.buf.rename()
 end, { desc = "Rename current symbol" })
+map("i", "<esc><esc>", "<c-o>")
 
 -- Comment
 map("n", "<leader>/", function()

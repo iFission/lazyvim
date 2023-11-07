@@ -80,18 +80,28 @@ return {
   },
   {
     "nvim-neotest/neotest",
-    opts = { adapters = { "neotest-plenary" } },
     dependencies = {
       "nvim-neotest/neotest-jest",
     },
-    config = function()
-      require("neotest").setup({
-        adapters = {
-          require("neotest-jest")({
-            jestCommand = "npm test -- --watch",
-            env = { CI = false },
-          }),
-        },
+    opts = function(_, opts)
+      vim.list_extend(opts.adapters, {
+        require("neotest-jest")({
+          jestCommand = "npm test -- --watch",
+          env = { CI = false },
+        }),
+      })
+    end,
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/neotest-python",
+    },
+    opts = function(_, opts)
+      vim.list_extend(opts.adapters, {
+        require("neotest-python")({
+          runner = "pytest",
+        }),
       })
     end,
   },

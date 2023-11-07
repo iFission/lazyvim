@@ -13,9 +13,10 @@ return {
       --     args = { "-tags=integration" },
       --   },
       -- },
-      status = { virtual_text = true },
-      output = { open_on_run = true },
+      status = { virtual_text = true, sign = true },
+      output = { open_on_run = true, open = "rightbelow vsplit | resize 30" },
       quickfix = {
+        enabled = true,
         open = function()
           if require("lazyvim.util").has("trouble.nvim") then
             vim.cmd("Trouble quickfix")
@@ -90,17 +91,6 @@ return {
             jestCommand = "npm test -- --watch",
             env = { CI = false },
           }),
-        },
-        quickfix = {
-          enabled = false,
-          open = false,
-        },
-        output_panel = {
-          open = "rightbelow vsplit | resize 30",
-        },
-        status = {
-          virtual_text = true,
-          signs = true,
         },
       })
     end,

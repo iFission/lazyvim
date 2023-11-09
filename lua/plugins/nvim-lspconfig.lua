@@ -7,11 +7,12 @@ return {
       keys[#keys + 1] = { "K", false }
     end,
     opts = {
+      inlay_hints = { enabled = true },
       diagnostics = {
         virtual_text = {
-          prefix = "■"
-        }
-      }
-    }
-  }
+          prefix = "■",
+        },
+      },
+    },
+  },
 }

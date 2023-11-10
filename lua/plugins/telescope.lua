@@ -43,9 +43,14 @@ return {
     { "<leader>ss", false },
     { "<leader>sS", false },
   },
-  opts = function()
+  config = function()
+    local cycle = require("telescope.cycle")(
+      require("telescope.builtin").git_file,
+      require("telescope.builtin").live_grep,
+      require("telescope.builtin").find_files
+    )
     local actions = require("telescope.actions")
-    return {
+    require("telescope").setup({
       defaults = {
         dynamic_preview_title = true,
         path_display = { "truncate" },
@@ -61,15 +66,21 @@ return {
         },
         mappings = {
           i = {
-            ["<leader><leader>"] = actions.close,
+            ["<esc>"] = actions.close,
+            ["<leader><Space>"] = function()
+              cycle.next()
+            end,
             ["<S-Down>"] = actions.cycle_history_next,
             ["<S-Up>"] = actions.cycle_history_prev,
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
+            ["<Tab>"] = function()
+              cycle.next()
+            end,
+            ["<S-Tab>"] = function()
+              cycle.previous()
+            end,
           },
-          n = { q = actions.close },
         },
       },
-    }
+    })
   end,
 }

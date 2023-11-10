@@ -326,6 +326,10 @@ map(
   { desc = "Increase height" }
 )
 
+-- arrow
+map({ "n", "x" }, "<Up>", "{")
+map({ "n", "x" }, "<Down>", "}")
+
 -- move
 map("n", "<S-Up>", ":MoveLine(-1)<cr>", { desc = "Move line up" })
 map("n", "<S-Down>", ":MoveLine(1)<cr>", { desc = "Move line down" })

@@ -23,11 +23,18 @@ vim.keymap.del("n", "<leader>fT")
 vim.keymap.del("n", "<leader>xl")
 vim.keymap.del("n", "<leader>xq")
 vim.keymap.del("n", "<leader>qq")
+vim.keymap.del("n", "<leader>ww")
+vim.keymap.del("n", "<leader>wd")
+vim.keymap.del("n", "<leader>w-")
+vim.keymap.del("n", "<leader>w|")
+vim.keymap.del("n", "<leader>-")
+vim.keymap.del("n", "<leader>|")
+vim.keymap.del("n", "<leader>l")
+vim.keymap.del("n", "<leader>L")
 
 -- nvim
 map({ "n", "i", "v" }, "<c-q>", "<cmd>quitall!<cr>", { desc = "Quit", remap = true })
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
-map({ "n", "v" }, "<leader><q>", "<cmd>quit!<cr>", { desc = "Quit", remap = true })
 map("n", "<leader>bn", "<cmd>tabnew<cr>", { desc = "New tab" })
 map("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Session delete" })
 
@@ -244,7 +251,7 @@ map("n", "<leader>bl", "<Cmd>BufferCloseBuffersRight<CR>", { desc = "Close right
 map("n", "<leader>bc", "<cmd>enew<cr>", { desc = "Create file" })
 
 -- diff
-map("n", "<leader>d", function()
+map("n", "<leader>Dc", function()
   local ftype = vim.api.nvim_eval("&filetype")
   vim.cmd("vsplit")
   vim.cmd("enew")
@@ -254,8 +261,8 @@ map("n", "<leader>d", function()
   vim.cmd("diffthis")
   vim.cmd([[execute "normal! \<C-w>h"]])
   vim.cmd("diffthis")
-end, { desc = "Compare to clipboard" })
-map("v", "<leader>d", function()
+end, { desc = "Compare with clipboard" })
+map("v", "<leader>Dc", function()
   local ftype = vim.api.nvim_eval("&filetype")
   vim.cmd(string.format(
     [[
@@ -275,7 +282,10 @@ map("v", "<leader>d", function()
     ftype,
     ftype
   ))
-end, { desc = "Compare to clipboard" })
+end, { desc = "Compare with clipboard" })
+map("n", "<leader>Df", function()
+  require("telescope").extensions.diff.diff_current({ hidden = true })
+end, { desc = "Compare with file" })
 
 -- window
 map({ "n", "x", "i" }, "<c-w><up>", "<Cmd>wincmd k<CR>", { desc = "Focus up window" })

@@ -6,12 +6,13 @@ return {
       { "theHamsta/nvim-dap-virtual-text" },
       { "nvim-telescope/telescope-dap.nvim" },
       { "jay-babu/mason-nvim-dap.nvim" },
+      { "Weissle/persistent-breakpoints.nvim" },
     },
   -- stylua: ignore
   keys = {
     { "<leader>dR", function() require("dap").run_to_cursor() end, desc = "Run to Cursor", },
     { "<leader>dE", function() require("dapui").eval(vim.fn.input "[Expression] > ") end, desc = "Evaluate Input", },
-    { "<leader>dC", function() require("dap").set_breakpoint(vim.fn.input "[Condition] > ") end, desc = "Conditional Breakpoint", },
+    { "<leader>dC", function() require('persistent-breakpoints.api').set_conditional_breakpoint() end, desc = "Conditional Breakpoint", },
     { "<leader>dU", function() require("dapui").toggle() end, desc = "Toggle UI", },
     { "<leader>db", function() require("dap").step_back() end, desc = "Step Back", },
     { "<leader>dc", function() require("dap").continue() end, desc = "Continue", },
@@ -27,7 +28,7 @@ return {
     { "<leader>dq", function() require("dap").close() end, desc = "Quit", },
     { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL", },
     { "<leader>ds", function() require("dap").continue() end, desc = "Start", },
-    { "<leader>dt", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint", },
+    { "<leader>dt", function() require('persistent-breakpoints.api').toggle_breakpoint() end, desc = "Toggle Breakpoint", },
     { "<leader>dx", function() require("dap").terminate() end, desc = "Terminate", },
     { "<leader>du", function() require("dap").step_out() end, desc = "Step Out", },
   },

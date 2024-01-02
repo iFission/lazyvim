@@ -65,6 +65,12 @@ return {
           preview_cutoff = 0,
         },
         mappings = {
+          n = {
+            ["<S-J>"] = actions.preview_scrolling_down,
+            ["<S-K>"] = actions.preview_scrolling_up,
+            ["<S-L>"] = actions.preview_scrolling_right,
+            ["<S-H>"] = actions.preview_scrolling_left,
+          },
           i = {
             ["<esc>"] = actions.close,
             ["<leader><Space>"] = function()
@@ -78,6 +84,10 @@ return {
             ["<S-Tab>"] = function()
               cycle.previous()
             end,
+            ["<S-J>"] = actions.preview_scrolling_down,
+            ["<S-K>"] = actions.preview_scrolling_up,
+            ["<S-L>"] = actions.preview_scrolling_right,
+            ["<S-H>"] = actions.preview_scrolling_left,
           },
         },
       },

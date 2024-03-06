@@ -72,7 +72,7 @@ map("n", "<leader>gr", "<cmd>Telescope git_bcommits<CR>", { desc = "Restore comm
 map("v", "<leader>gr", "<cmd>Telescope git_bcommits_range<CR>", { desc = "Commits (range)" })
 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
 map({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
-map("n", "<leader>gm", "?https<CR>y$", { desc = "Copy merge request URL" })
+map("n", "<leader>gm", "?https.*merge<CR>y$", { desc = "Copy merge request URL" })
 
 map("n", "<leader>gl", function()
   require("gitsigns").blame_line()

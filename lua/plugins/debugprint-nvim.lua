@@ -7,12 +7,10 @@ return {
   },
   version = "*",
   config = function()
-    local opts = {
-      create_keymaps = false,
-    }
+    local opts = {}
     require("debugprint").setup(opts)
 
-    vim.keymap.set({ "n", "x" }, "<C-p>", function()
+    vim.keymap.set({ "n", "x" }, "<C-b>", function()
       -- Note: setting `expr=true` and returning the value are essential
       return require("debugprint").debugprint({ variable = true })
     end, {

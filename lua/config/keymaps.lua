@@ -83,6 +83,7 @@ end, { desc = "Blame (full)" })
 
 -- file
 map("n", "<leader>W", "<cmd>w !sudo tee %<cr>", { desc = "Force write" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><cmd>stopinsert<cr>", { desc = "Save file" })
 map("n", "<leader><C-s>", "<cmd>noa w<cr>", { desc = "Save without formatting" })
 
 -- find

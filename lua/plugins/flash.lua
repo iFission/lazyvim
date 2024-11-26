@@ -1,6 +1,7 @@
 return { {
   "folke/flash.nvim",
   event = "BufEnter",
+  enabled = false,
   opts = {
     modes = {
       char = {

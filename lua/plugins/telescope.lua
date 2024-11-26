@@ -1,4 +1,3 @@
-local Util = require("lazyvim.util")
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
@@ -39,7 +38,7 @@ return {
     { "<leader>sW", false },
     { "<leader>sw", false },
     { "<leader>sW", false },
-    { "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
+    { "<leader>uC", LazyVim.pick("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
     { "<leader>ss", false },
     { "<leader>sS", false },
   },

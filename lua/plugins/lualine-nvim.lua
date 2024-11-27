@@ -40,7 +40,8 @@ return {
             { "filetype", icon_only = false, separator = "", padding = { left = 2, right = 0 } },
             {
               function()
-                return " " .. require("vim.treesitter.highlighter").active[vim.api.nvim_get_current_buf()].tree._lang
+                return "󰹩 "
+                  .. require("vim.treesitter.highlighter").active[vim.api.nvim_get_current_buf()].tree._lang
               end,
               padding = { left = 2, right = 0 },
             },

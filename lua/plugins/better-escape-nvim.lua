@@ -1,5 +1,6 @@
 return {
   "max397574/better-escape.nvim",
+  enabled = false,
   lazy = false,
   opts = {
     mapping = { "jk", "jj", "kk", "kj", "uu" }, -- a table with mappings to use

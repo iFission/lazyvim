@@ -48,7 +48,7 @@ return {
               function()
                 local clients = {}
                 for _, client in ipairs(vim.lsp.get_active_clients()) do
-                  if client.name ~= "null-ls" then
+                  if client.name ~= "null-ls" and not vim.tbl_contains(clients, client.name) then
                     table.insert(clients, client.name)
                   end
                 end
@@ -65,7 +65,9 @@ return {
                 local clients = {}
                 local ft = vim.api.nvim_buf_get_option(vim.api.nvim_get_current_buf(), "filetype")
                 for _, client in ipairs(require("null-ls.sources").get_all()) do
-                  if require("null-ls.sources").is_available(client, ft) then
+                  if
+                    require("null-ls.sources").is_available(client, ft) and not vim.tbl_contains(clients, client.name)
+                  then
                     table.insert(clients, client.name)
                   end
                 end

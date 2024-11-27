@@ -53,7 +53,7 @@ return {
                   end
                 end
                 if next(clients) then
-                  return " " .. table.concat(clients, " ")
+                  return " " .. table.concat(clients, " ")
                 else
                   return ""
                 end

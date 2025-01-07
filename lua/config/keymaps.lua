@@ -304,7 +304,7 @@ map("n", "<leader>Df", function()
 end, { desc = "Compare with file" })
 
 -- window
-map({ "n", "x", "i" }, "<c-w>1", "<Cmd>BufferGoto 1<CR>", { desc = "Go to buffer 1" })
+map({ "n", "x", "i" }, "<c-w>1", "<Cmd>lua require('bufferline').go_to(1, true)<CR>", { desc = "Go to buffer 1" })
 map({ "n", "x", "i" }, "<c-w><up>", "<Cmd>wincmd k<CR>", { desc = "Focus up window" })
 map({ "n", "x", "i" }, "<c-w><down>", "<Cmd>wincmd j<CR>", { desc = "Focus down window" })
 map({ "n", "x", "i" }, "<c-w><left>", "<Cmd>wincmd h<CR>", { desc = "Focus left window" })

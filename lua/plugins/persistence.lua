@@ -2,6 +2,7 @@ return {
   {
     "folke/persistence.nvim",
     event = "BufReadPre",
+    enabled = false,
     opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "globals" } },
     config = function()
       require("persistence").setup({

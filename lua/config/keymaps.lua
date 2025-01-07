@@ -379,5 +379,5 @@ map("c", "<C-v>", "<C-r>")
 -- editing
 map("n", "<bs>", "X")
 map("n", "<del>", "x")
-map("n", "<cr>", "ciw")
+-- map("n", "<cr>", "ciw")
 map("v", "<leader>j", "J", { desc = "Join lines" })

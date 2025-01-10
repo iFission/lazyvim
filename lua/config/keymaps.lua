@@ -38,8 +38,9 @@ map("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Session delete" })
 -- package
 map("n", "<leader>ps", "<cmd>Lazy install<cr>", { desc = "Lazy" })
 map("n", "<leader>pm", "<cmd>Mason<cr>", { desc = "Mason" })
-map("n", "<leader>pn", "<cmd>LspInfo<cr>", { desc = "LSP" })
-map("n", "<leader>pl", "<cmd>NullLsInfo<cr>", { desc = "Null-ls" })
+map("n", "<leader>pn", "<cmd>LspInfo<cr>", { desc = "LspInfo" })
+map("n", "<leader>pc", "<cmd>ConformInfo<cr>", { desc = "ConformInfo" })
+map("n", "<leader>pl", "<cmd>LazyFormatInfo<cr>", { desc = "LazyFormatInfo" })
 
 -- git
 map("n", "<leader>g4", "<cmd>Gitsign prev_hunk<cr>", { desc = "Prev hunk" })

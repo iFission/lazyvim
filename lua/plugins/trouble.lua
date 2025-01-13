@@ -13,10 +13,10 @@ return { {
     { "<leader>xQ", false },
     { "[q",         false },
     { "]q",         false },
-    { "<leader>tx", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics (Trouble)" },
-    { "<leader>tX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-    { "<leader>tL", "<cmd>TroubleToggle loclist<cr>",               desc = "Location List (Trouble)" },
-    { "<leader>tQ", "<cmd>TroubleToggle quickfix<cr>",              desc = "Quickfix List (Trouble)" },
+    { "<leader>tx", "<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<cr>",  desc = "Document Diagnostics (Trouble)" },
+    { "<leader>tX", "<cmd>Trouble diagnostics toggle focus=true<cr>", desc = "Workspace Diagnostics (Trouble)" },
+    { "<leader>tL", "<cmd>Trouble loclist toggle<cr>",               desc = "Location List (Trouble)" },
+    { "<leader>tQ", "<cmd>Trouble quickfix toggle<cr>",              desc = "Quickfix List (Trouble)" },
     {
       "[q",
       function()

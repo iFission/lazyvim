@@ -152,7 +152,7 @@ map("n", "<leader>fw", "<cmd> Telescope live_grep<cr>", { desc = "Find word" })
 map("n", "<leader>fW", "<cmd> Telescope grep_string<cr>", { desc = "Find word (fuzzy)" })
 map("n", "<leader>fh", "<cmd> Telescope oldfiles<cr>", { desc = "Find history" })
 map("n", "<leader>fH", "<cmd> Telescope help_tags<cr>", { desc = "Find help" })
-map("n", "<leader>9", "<cmd> Navbuddy<cr>", { desc = "Navigate symbols" })
+map("n", "<leader>9", "<cmd> SymbolsOutline<cr>", { desc = "Symbols" })
 map(
   "n",
   "<leader>fo",

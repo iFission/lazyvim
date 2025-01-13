@@ -159,9 +159,6 @@ map(
   "<cmd> Telescope file_browser path=%:p:h select_buffer=true<cr>",
   { desc = "File browser", silent = true }
 )
-map("n", "<leader>0", function()
-  require("barbar.api").pick_buffer()
-end, { desc = "Pick buffer", silent = true })
 map("n", ")", function()
   require("telescope.builtin").buffers()
 end, { desc = "Find buffer", silent = true })

@@ -153,6 +153,7 @@ map("n", "<leader>fW", "<cmd> Telescope grep_string<cr>", { desc = "Find word (f
 map("n", "<leader>fh", "<cmd> Telescope oldfiles<cr>", { desc = "Find history" })
 map("n", "<leader>fH", "<cmd> Telescope help_tags<cr>", { desc = "Find help" })
 map("n", "<leader>9", "<cmd> SymbolsOutline<cr>", { desc = "Symbols" })
+map("n", "<leader>0", "<cmd> Telescope buffers<cr>", { desc = "Buffers" })
 map(
   "n",
   "<leader>fo",

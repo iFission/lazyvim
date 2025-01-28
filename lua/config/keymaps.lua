@@ -37,6 +37,7 @@ map("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "Session delete" })
 
 -- package
 map("n", "<leader>ps", "<cmd>Lazy install<cr>", { desc = "Lazy" })
+map("n", "<leader>pe", "<cmd>LazyExtras<cr>", { desc = "LazyExtras" })
 map("n", "<leader>pm", "<cmd>Mason<cr>", { desc = "Mason" })
 map("n", "<leader>pn", "<cmd>LspInfo<cr>", { desc = "LSP" })
 map("n", "<leader>pl", "<cmd>NullLsInfo<cr>", { desc = "Null-ls" })
@@ -240,10 +241,7 @@ map(
 )
 
 -- terminal
-local lazyterm = function()
-  Util.float_term(nil, { cwd = Util.get_root() })
-end
-map({ "n", "v", "t" }, "<C-t>", lazyterm, { desc = "Toggle terminal" })
+map({ "n", "v", "t" }, "<C-t>", "<Cmd>lua Snacks.terminal.toggle()<CR>", { desc = "Toggle terminal" })
 
 -- buffer
 -- map("n", "<leader>b", { name = "Buffers" })

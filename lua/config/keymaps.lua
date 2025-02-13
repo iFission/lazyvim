@@ -75,6 +75,7 @@ map("v", "<leader>gr", "<cmd>Telescope git_bcommits_range<CR>", { desc = "Commit
 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
 map({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
 map("n", "<leader>gm", "?https.*merge<CR>y$", { desc = "Copy merge request URL" })
+map("n", "<leader>gu", "<cmd>GitBlameCopyFileURL<CR>", { desc = "Copy file URL" })
 
 map("n", "<leader>gl", function()
   require("gitsigns").blame_line()

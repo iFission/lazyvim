@@ -46,7 +46,7 @@ return {
     local cycle = require("telescope.cycle")(
       require("telescope.builtin").git_files,
       require("telescope.builtin").find_files,
-      require("telescope.builtin").live_grep
+      require("telescope").extensions.live_grep_args.live_grep_args
     )
     local actions = require("telescope.actions")
     require("telescope").setup({

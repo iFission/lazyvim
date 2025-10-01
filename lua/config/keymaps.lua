@@ -63,6 +63,19 @@ map("n", "<leader>gp", "<cmd>Gitsign preview_hunk_inline<cr>", { desc = "Preview
 map("n", "<leader>gs", function()
   require("telescope.builtin").git_status()
 end, { desc = "Git status" })
+map("n", "<leader>gS", function()
+  local gs = require("gitsigns")
+  local cfg = require("gitsigns.config").config
+  local enable = not cfg.word_diff -- if word_diff is off -> turn the bundle on
+
+  gs.toggle_deleted(enable)
+  gs.toggle_linehl(enable)
+  gs.toggle_numhl(enable)
+  gs.toggle_word_diff(enable)
+
+  vim.notify("Gitsigns view " .. (enable and "ON" or "OFF"))
+end, { desc = "Toggle gitsigns view (deleted/linehl/numhl/word_diff)" })
+
 map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "Branches" })
 map("n", "<leader>gB", "<cmd>AdvancedGitSearch diff_branch_file<CR>", { desc = "Branches" })
 map("n", "<leader>gc", "<cmd>AdvancedGitSearch search_log_content<CR>", { desc = "Commits (repo)" })

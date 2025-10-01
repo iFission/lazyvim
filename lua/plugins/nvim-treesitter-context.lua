@@ -7,7 +7,7 @@ return {
         max_lines = 5,
         multiline_threshold = 2,
         trim_scope = "outer",
-        mode = "cursor",
+        mode = "topline",
         separator = nil,
       })
     end,

@@ -45,7 +45,9 @@ return {
   config = function()
     local cycle = require("telescope.cycle")(
       require("telescope.builtin").git_files,
-      require("telescope.builtin").find_files,
+      function(opts)
+        require("telescope.builtin").find_files(vim.tbl_extend("force", opts or {}, { hidden = true, no_ignore = true }))
+      end,
       require("telescope").extensions.live_grep_args.live_grep_args
     )
     local actions = require("telescope.actions")

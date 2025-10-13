@@ -152,7 +152,7 @@ map("v", "<leader><leader>", function()
   end
 
   local text = vim.getVisualSelection()
-  require("telescope.builtin").live_grep({ default_text = text })
+  require("telescope").extensions.live_grep_args.live_grep_args({ default_text = text })
 end, { desc = "Find word in selection" })
 map("n", "<leader>ff", function()
   require("telescope.builtin").find_files({ hidden = true, no_ignore = true })

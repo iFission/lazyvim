@@ -81,7 +81,7 @@ map("n", "<leader>gB", "<cmd>AdvancedGitSearch diff_branch_file<CR>", { desc = "
 map("n", "<leader>gc", "<cmd>AdvancedGitSearch search_log_content<CR>", { desc = "Commits (repo)" })
 map("n", "<leader>gC", "<cmd>AdvancedGitSearch search_log_content_file<CR>", { desc = "Commits (file)" })
 map("n", "<leader>gr", "<cmd>Telescope git_bcommits<CR>", { desc = "Restore commit (file)" })
-map("v", "<leader>gr", "<cmd>Telescope git_bcommits_range<CR>", { desc = "Commits (range)" })
+map("v", "<leader>gr", "<cmd>Telescope git_bcommits_range<CR>", { desc = "Restore commit (range)" })
 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
 map({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
 map("n", "<leader>gm", "?https.*merge<CR>y$", { desc = "Copy merge request URL" })

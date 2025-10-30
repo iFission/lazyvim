@@ -157,6 +157,24 @@ end, { desc = "Find word in selection" })
 map("n", "<leader>ff", function()
   require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
 end, { desc = "Find files" })
+map("v", "<leader>ff", function()
+  function vim.getVisualSelection()
+    vim.cmd('noau normal! "vy"')
+    local text = vim.fn.getreg("v")
+    vim.fn.setreg("v", {})
+
+    text = string.gsub(text, "\n", "")
+    if #text > 0 then
+      return text
+    else
+      return ""
+    end
+  end
+
+  local text = vim.getVisualSelection()
+
+  require("telescope.builtin").find_files({ hidden = true, no_ignore = true, default_text = text })
+end, { desc = "Find files" })
 map("n", "<leader>fF", function()
   require("telescope.builtin").git_files()
 end, { desc = "Find git files" })

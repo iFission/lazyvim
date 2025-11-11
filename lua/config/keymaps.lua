@@ -132,7 +132,7 @@ map("n", "<leader><leader>", function()
   end
 
   if is_git_repo() then
-    require("telescope.builtin").git_files()
+    require("telescope.builtin").git_files({ show_untracked = true })
   else
     require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
   end

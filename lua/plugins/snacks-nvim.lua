@@ -6,6 +6,36 @@ return {
   opts = {
     bigfile = { enabled = true },
     dashboard = { enabled = false },
+    indent = {
+      enabled = true,
+      char = "▏",
+      animate = { enabled = false },
+      hl = {
+        "SnacksIndent1",
+        "SnacksIndent2",
+        "SnacksIndent3",
+        "SnacksIndent4",
+        "SnacksIndent5",
+        "SnacksIndent6",
+        "SnacksIndent7",
+        "SnacksIndent8",
+      },
+      scope = {
+        char = "▏",
+        underline = true,
+        -- only_current = true,
+        hl = {
+          "SnacksIndent1",
+          "SnacksIndent2",
+          "SnacksIndent3",
+          "SnacksIndent4",
+          "SnacksIndent5",
+          "SnacksIndent6",
+          "SnacksIndent7",
+          "SnacksIndent8",
+        },
+      },
+    },
     notifier = {
       enabled = true,
       timeout = 3000,

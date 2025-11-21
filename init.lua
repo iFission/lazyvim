@@ -3,7 +3,7 @@ require("config.lazy")
 
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
   init_options = {
     preferences = {
